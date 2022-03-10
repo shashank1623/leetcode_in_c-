@@ -1,0 +1,32 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0)
+        {
+            return false;
+        }
+        if(x >=0 && x <=9)
+        {
+            return true;
+        }
+        
+        long int check_num = 0;
+        int num = x;
+        int carry;
+        while(num!=0)
+        {
+            carry = num % 10;
+            check_num = check_num * 10 + carry;
+            num = num / 10;
+        }
+        
+        if(check_num == x)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+};
